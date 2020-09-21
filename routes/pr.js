@@ -122,7 +122,7 @@ pr.get('/:id', ec('basic'), async (req, res) => {
   //-----------------------------------------------------------------------------
   /*  Get All Posts  */
   //-----------------------------------------------------------------------------
-  pr.get('/posts/getall', ec('basic'), async (req, res, next) => {
+  pr.get('/posts/getall', async (req, res, next) => {
     try {
         const posts = await db.findAllPosts()
          res.status(200).json(posts)
