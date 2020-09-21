@@ -16,7 +16,7 @@ server.use(cp())
 
 server.use('/api', ar)
 
-server.get('/', (req, res) => {
+server.get('/api', (req, res) => {
     return res.status(200).json({
         Message: "Api is working as it should."
     })
