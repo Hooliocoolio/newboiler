@@ -32,8 +32,8 @@ pr.post('/add', ec('basic'), async (req, res, next) => {
             })
         } else if (post){
             return res.status(201).json({
-                Success: "Your post was added successfuly!",
-                Post: post
+                Success: "Your post was added successfuly!"
+                 
             })
         }
 
