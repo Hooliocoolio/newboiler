@@ -120,10 +120,10 @@ ur.get('/getusers',  ec('superadmin'), async (req, res, next) => {
     });
     
   
-    ur.delete('/delete/:username', ec('superadmin'), (req, res) => {
-      const { username, id } = req.params;
+    ur.delete('/delete/:id', ec('superadmin'), (req, res) => {
+      const { id } = req.params;
     
-      db.removeUser(username, id)
+      db.removeUser(id)
       .then(deleted => {
         if (deleted) {
           res.json({ 
