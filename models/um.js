@@ -36,10 +36,9 @@ function findById(id) {
   }
   
   
-  function removeUser(username, id){
+  function removeUser(username){
     return db('users')
-    .where('username', username)
-    .where('id', id)
+    .where('id', username)
     .del()
     .then(response => (!response ? null : response))
   }
