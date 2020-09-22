@@ -16,7 +16,7 @@ const ec = require('../mware/ec')
 /*  Post Router  */
 const ur = express.Router()
 //-----------------------------------------------------------------------------
-/*  Posts EndPoints  *
+/* User EndPoints  *
 //-----------------------------------------------------------------------------
 /*  Get Users  */
 //-----------------------------------------------------------------------------
@@ -82,7 +82,8 @@ ur.get('/getusers',  ec('superadmin'), async (req, res, next) => {
         
       res.cookie("token", token)
       res.status(200).json({ 
-          Message: `Welcome ${user.username}!`
+          Message: `Welcome ${user.username}!`,
+          "token": token
           });
       } catch (err){
           next(err)
