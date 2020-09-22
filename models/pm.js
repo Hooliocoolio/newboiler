@@ -14,23 +14,22 @@ function addPost(post) {
 }
 
 function updatePost(changes, id) {
-    return db('posts').update(changes).where({ id })
+  return db("posts").update(changes).where({ id });
 }
 
 function deletePost(id) {
-    return db('hacks') 
-        .where('id', id)
-        .del()
-        .then(response => (!response ? null : response))
+  return db("hacks")
+    .where("id", id)
+    .del()
+    .then((response) => (!response ? null : response));
 }
 
 function findAllPosts() {
-    return db('posts')
+  return db("posts");
 }
 
 function findPostById(id) {
-    return db('posts')
-        .where('id ', id)
+  return db("posts").where("id ", id);
 }
 
 module.exports = {
